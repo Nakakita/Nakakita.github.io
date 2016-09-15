@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+<meta charset="UTF-8">
+<title>PeerJS Document</title>
+<script src="https://skyway.io/dist/0.3/peer.js"></script>
+<script>
+
+var peer = new Peer({key:'3fe45e9c-4406-41e7-a3db-0b45be57420c'})
+
+peer.on('open',function(id){
+	console.log('My peer ID is:' + id)
+});
+
+</script>
 </head>
 <body>
 	
