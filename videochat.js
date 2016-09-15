@@ -5,7 +5,7 @@ var localStream;    // 自分の映像ストリームを保存しておく変数
 var connectedCall;  // 接続したコールを保存しておく変数
 
 // SkyWayのシグナリングサーバーへ接続する (APIキーを置き換える必要あり）
-var peer = new Peer({ key: 'YourApiKey', debug: 3});
+var peer = new Peer({ key: '3fe45e9c-4406-41e7-a3db-0b45be57420c', debug: 3});
 
 // シグナリングサーバへの接続が確立したときに、このopenイベントが呼ばれる
 peer.on('open', function(){
