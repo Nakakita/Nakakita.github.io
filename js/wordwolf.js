@@ -55,7 +55,7 @@ function start(){
     // for DataChannel
     multiparty.on('message', function(mesg) {
         // peerからテキストメッセージを受信
-        $("div.hidden").append('<div id="' + mesg.data + '"></div>');
+        $("div.hidden02").append('<div id="' + mesg.data + '"></div>');
         //全回答のID取得
         allAnswerPost();
     });
@@ -102,7 +102,7 @@ function myidPost(){
 
 function countDown(){
     // $('#countdown').removeClass()
-    myCnt = 5;
+    myCnt = 180;
     myTim = setInterval("myTimer()",1000);
 };
 
@@ -125,8 +125,8 @@ function convertToTime(time = null) {
 };
 
 function allAnswerPost(){
-    if($('div.hidden > div').length == 4){
-        $('div.hidden > div').each(function(){
+    if($('div.hidden02 > div').length == 4){
+        $('div.hidden02 > div').each(function(){
             allAnswer.push($(this).attr('id'));
         });
     }
@@ -140,7 +140,7 @@ $(function (){
             var forecastID = $(this).attr('id');
             var data = forecastID;
             multiparty.send(data);
-            $("div.hidden").append('<div id="' + data + '"></div>');
+            $("div.hidden02").append('<div id="' + data + '"></div>');
             answerCount++;
             //全回答のID取得
             allAnswerPost();
