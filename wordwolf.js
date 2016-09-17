@@ -31,8 +31,8 @@ function start(){
     });
 
 
-    $("#audio-mute").on("click", function(ev) {
-        var mute = !$(this).data("muted");
+    $('#audio-mute').on('click', function(ev){
+        var mute = !$(this).data('muted');
         multiparty.mute({audio: mute});
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
