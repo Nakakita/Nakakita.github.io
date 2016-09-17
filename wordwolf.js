@@ -29,10 +29,13 @@ function start(){
     $('button').on('click', function(ev){
         multiparty.send('hello');/* 接続中のピアにメッセージを送信 */
     });
-
-    multiparty.on('message', function(mesg){
-        $('p.receive').append(mesg.data + "<br>");/* 相手から受信したメッセージを表示 */
+    // handle mute/unmute
+    $("#video-mute").on("click", function(ev) {
+        var mute = !$(this).data("muted");
+        multiparty.mute({video: mute});
+        $(this).text("video " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
+
 
     multiparty.start();
 }
