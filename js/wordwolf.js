@@ -121,13 +121,12 @@ function convertToTime(time = null) {
 };
 
 $(function (){
-    $('form > div#streams02 *').on('click',function(){
+    $('form > div#streams02').on('click','video',function(){
         //少数派（予想）のIDを取得
-        var forecastID = $(this).find('video').attr('id');
+        console.log('aaaaa');
+        var forecastID = $(this).attr('id');
         var data = forecastID;
         multiparty.send(data);
-        console.log(forecastID);
-
     });
 
 
