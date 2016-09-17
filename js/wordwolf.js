@@ -62,8 +62,7 @@ function start(){
 
 function getJson(){
     $.getJSON("https://219.94.241.84/api/word.php", function(data){
-        console.log(data);
-
+        console.log(data[0] + data[1] + data[2]);
     });
 }
 
