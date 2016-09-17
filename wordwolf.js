@@ -11,22 +11,13 @@ function start(){
         "debug":3
     });
 
-    // //for MediaStream
-    // multiparty.on('my_ms',function(video){
-    //     //自分のvideoを表示
-    //     var vNode = MultiParty.util.createVideoNode(video);
-    //     vNode.volume = 0;
-    //     $(vNode).appendTo('#streams');
-    // }).on('peer_ms', function(video){
-    //     //peerのvideoを表示
-    //     var vNode = MultiParty.util.createVideoNode(video);
-    //     $(vNode).appendTo('#streams');
-    // }).on('ms_close', function(peer_id){
-    //     //peerが切れたら、対象のvideoノードを削除する
-    //     $('#'+peer_id).remove();
-    // })
     //for MediaStream
-    multiparty.on('peer_ms', function(video){
+    multiparty.on('my_ms',function(video){
+        //自分のvideoを表示
+        var vNode = MultiParty.util.createVideoNode(video);
+        vNode.volume = 0;
+        $(vNode).appendTo('#streams');
+    }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
         $(vNode).appendTo('#streams');
@@ -34,6 +25,15 @@ function start(){
         //peerが切れたら、対象のvideoノードを削除する
         $('#'+peer_id).remove();
     })
+    //for MediaStream
+    // multiparty.on('peer_ms', function(video){
+    //     //peerのvideoを表示
+    //     var vNode = MultiParty.util.createVideoNode(video);
+    //     $(vNode).appendTo('#streams');
+    // }).on('ms_close', function(peer_id){
+    //     //peerが切れたら、対象のvideoノードを削除する
+    //     $('#'+peer_id).remove();
+    // })
 
     multiparty.start();
 
@@ -45,5 +45,7 @@ function start(){
     });
 
 }
+
+
 
 start();
