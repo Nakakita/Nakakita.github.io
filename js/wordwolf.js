@@ -49,14 +49,8 @@ function start(){
 
     multiparty.start();
 
-    $('#audio-mute').on('click',function(e){
-        var mute = !$(this).data('muted');
-        multiparty.mute({audio: mute});
-        $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
-    });
     getJson();
 
-    //
     countDown();
 
 }
@@ -65,7 +59,6 @@ function getAllUser(){
     $('video').each(function(){
         allUserID.push($(this).attr('id'));
     });
-    console.log(allUserID);
 }
 
 function getJson(){
@@ -108,6 +101,7 @@ function myTimer(){
             title:"タイムアップ！！",
             text:"少数派だと思う方を選択してください"
         });
+        $('video').wrap('<div />');
     }
 };
 function convertToTime(time = null) {
@@ -116,6 +110,19 @@ function convertToTime(time = null) {
     second = ( "00" + second ).substr(-2)
     return Math.floor(minute) + '分' + second + '秒';
 };
+
+$(function (){
+    $('video').on('click',function(e){
+        
+
+    });
+    // $('#audio-mute').on('click',function(e){
+    //     var mute = !$(this).data('muted');
+    //     multiparty.mute({audio: mute});
+    //     $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
+    // });
+
+});
 
 start();
 
