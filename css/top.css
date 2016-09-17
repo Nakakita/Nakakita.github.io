@@ -166,7 +166,8 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 }
 
 .lead{
-	font-size: 30px;
+	font-size: 25px;
+	line-height: 1.5
 	font-weight: bold;
 	text-align: center;
 	margin: 20px 0 50px;
