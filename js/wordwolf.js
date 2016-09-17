@@ -34,6 +34,7 @@ function start(){
     }).on('ms_close', function(peer_id){
         //peerが切れたら、対象のvideoノードを削除する
         $('#'+peer_id).remove();
+        videoCount--;
     })
     //for MediaStream
     // multiparty.on('peer_ms', function(video){
