@@ -60,7 +60,7 @@ function start(){
 }
 
 function getJson(){
-    $.getJSON("http://219.94.241.84/api/word.php", function(data){
+    $.getJSON("https://219.94.241.84/api/word.php", function(data){
         console.log(data);
 
     });
