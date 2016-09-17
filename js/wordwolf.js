@@ -64,18 +64,6 @@ function start(){
 
     multiparty.start();
 
-<<<<<<< HEAD
-    $('#audio-mute').on('click',function(e){
-        var mute = !$(this).data('muted');
-        multiparty.mute({audio: mute});
-        $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
-    });
-=======
-    getJson();
-
-    countDown();
->>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
-
     //countDown();
 }
 
@@ -163,9 +151,6 @@ function allAnswerPost(){
     }
 };
 
-
-<<<<<<< HEAD
-=======
 $(function (){
     $('form > div#streams02').on('click','video',function(){
         if(answerCount == 0){
@@ -189,10 +174,4 @@ $(function (){
 
 });
 
->>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
 start();
-
-$(window).on("load",function(){
-    //do something
-    //getJson()
-});
