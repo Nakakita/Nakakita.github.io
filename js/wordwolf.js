@@ -2,12 +2,10 @@
 //var peer = new Peer({ key: '3fe45e9c-4406-41e7-a3db-0b45be57420c', debug: 3});
 
 var multiparty;
+var myID;
+var videoCount = 1;
 var myCnt = 0;
 var myTim = 0;
-
-function videoCount(){
-
-}
 
 function start(){
 
@@ -15,7 +13,7 @@ function start(){
     multiparty = new MultiParty({
         "key":"3fe45e9c-4406-41e7-a3db-0b45be57420c",
         "reliable":true,
-        "debug":3
+        // "debug":3
     });
 
     //for MediaStream
@@ -23,11 +21,16 @@ function start(){
         //自分のvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
         vNode.volume = 0;
-        $(vNode).appendTo('#streams');
+        $(vNode).appendTo('#streams01');
+        myidPost();
     }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
-        $(vNode).appendTo('#streams');
+        $(vNode).appendTo('#streams02');
+        videoCount++;
+        if(videoCount == 4){
+            postID();
+        }
     }).on('ms_close', function(peer_id){
         //peerが切れたら、対象のvideoノードを削除する
         $('#'+peer_id).remove();
@@ -49,9 +52,36 @@ function start(){
         multiparty.mute({audio: mute});
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
+    getJson();
 
+    //
     countDown();
 
+}
+
+function getJson(){
+    $.getJSON("http://219.94.241.84/api/word.php", function(data){
+        console.log(data);
+
+    });
+}
+
+function myidPost(){
+    //自分のIDをポストする
+    myID = $('#streams01 video').attr("id");
+    $.ajax({
+        url: 'user.php',
+        type:'POST',
+        dataType: 'json',
+        data : {id : myID },
+        timeout:10000,
+        // success: function(data) {
+        //     alert("ok");
+        // },
+        // error: function(XMLHttpRequest, textStatus, errorThrown) {
+        //     alert("error");
+        // }
+    });
 }
 
 function countDown(){
@@ -65,8 +95,10 @@ function myTimer(){
     document.getElementById( "countdown" ).innerHTML = convertToTime(myCnt);
     if ( myCnt == 0 ){
         clearInterval( myTim );
-        sweetAlert("タイムアップ！！", "少数派だと思う方を選択してください");
-
+        sweetAlert({
+            title:"タイムアップ！！",
+            text:"少数派だと思う方を選択してください"
+        });
     }
 };
 function convertToTime(time = null) {
