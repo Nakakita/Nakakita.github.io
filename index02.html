@@ -7,10 +7,23 @@
 <script>
 
 var peer = new Peer({key:'3fe45e9c-4406-41e7-a3db-0b45be57420c'})
+var conn = peer.connect('dest-peer-id');
+peer.on('connection',function(conn){
+	conn.on('open',function(){
+		//メッセージ受信
+		conn.on('data',function(data){
+			console.log('Receved', data);
+		});
 
+		//メッセージを送信
+		conn.send('Hello!');
+	});
+
+});
 peer.on('open',function(id){
 	console.log('My peer ID is:' + id)
 });
+
 
 </script>
 </head>
