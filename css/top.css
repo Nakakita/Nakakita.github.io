@@ -165,3 +165,18 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	font-size: 18px;
 	font-weight: bold;
 }
+
+ul li{
+	position: relative;
+}
+
+ul li:after{
+	content: '';
+	width: 10px;
+	height: 10px;
+	display: block;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
