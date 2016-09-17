@@ -4,9 +4,11 @@
 var multiparty;
 var myID;
 var videoCount = 1;
+var answerCount = 0;
 var myCnt = 0;
 var myTim = 0;
 var allUserID =[];
+var allAnswer = [];
 
 function start(){
 
@@ -27,7 +29,9 @@ function start(){
     }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
-        $(vNode).appendTo('#streams02');
+        $(vNode)
+            .appendTo('#streams02')
+            .wrap('<div class=video' + videoCount + '" />');
         videoCount++;
         if(videoCount == 4){
             getAllUser();
@@ -48,13 +52,29 @@ function start(){
     //     $('#'+peer_id).remove();
     // })
 
+    ////////////////////////////////
+    // for DataChannel
+    multiparty.on('message', function(mesg) {
+        // peerからテキストメッセージを受信
+        $("div.hidden").append('<div id="' + mesg.data + '"></div>');
+        //全回答のID取得
+        allAnswerPost();
+    });
+
+
     multiparty.start();
 
+<<<<<<< HEAD
     $('#audio-mute').on('click',function(e){
         var mute = !$(this).data('muted');
         multiparty.mute({audio: mute});
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
+=======
+    getJson();
+
+    countDown();
+>>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
 
     //countDown();
 }
@@ -132,10 +152,44 @@ function convertToTime(time = null) {
     var minute = time / 60;
     var second = time % 60;
     second = ( "00" + second ).substr(-2)
-    return Math.floor(minute) + '分' + second + '秒';
+    return '<span class="number">' + Math.floor(minute) + '</span><span class="text">分</span><span class="number">' + second + '</span><span class="text">秒</span>';
+};
+
+function allAnswerPost(){
+    if($('div.hidden > div').length == 4){
+        $('div.hidden > div').each(function(){
+            allAnswer.push($(this).attr('id'));
+        });
+    }
 };
 
 
+<<<<<<< HEAD
+=======
+$(function (){
+    $('form > div#streams02').on('click','video',function(){
+        if(answerCount == 0){
+            //少数派（予想）のIDを取得
+            var forecastID = $(this).attr('id');
+            var data = forecastID;
+            multiparty.send(data);
+            $("div.hidden").append('<div id="' + data + '"></div>');
+            answerCount++;
+            //全回答のID取得
+            allAnswerPost();
+        }
+    });
+
+
+    // $('#audio-mute').on('click',function(e){
+    //     var mute = !$(this).data('muted');
+    //     multiparty.mute({audio: mute});
+    //     $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
+    // });
+
+});
+
+>>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
 start();
 
 $(window).on("load",function(){
