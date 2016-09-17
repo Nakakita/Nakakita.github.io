@@ -25,7 +25,7 @@ function start(){
         var vNode = MultiParty.util.createVideoNode(video);
         vNode.volume = 0;
         $(vNode).appendTo('#streams01');
-        myidPost();
+        //myidPost();
     }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
@@ -35,6 +35,7 @@ function start(){
         videoCount++;
         if(videoCount == 4){
             getAllUser();
+            getJson();
         }
     }).on('ms_close', function(peer_id){
         //peerが切れたら、対象のvideoノードを削除する
@@ -63,10 +64,19 @@ function start(){
 
     multiparty.start();
 
+<<<<<<< HEAD
+    $('#audio-mute').on('click',function(e){
+        var mute = !$(this).data('muted');
+        multiparty.mute({audio: mute});
+        $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
+    });
+=======
     getJson();
 
     countDown();
+>>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
 
+    //countDown();
 }
 
 function getAllUser(){
@@ -76,11 +86,32 @@ function getAllUser(){
 }
 
 function getJson(){
+    myID = $('#streams01 video').attr("id");
+    //console.log(myID);
     $.getJSON("https://219.94.241.84/api/word.php", function(data){
-        console.log(data);
+        //var list = getAllUser();
+        allUserID.sort(function(a, b){
+            if( a < b ) return -1;
+            if( a > b ) return 1;
+            return 0;
+        });
 
+        var key = $.inArray(myID, allUserID);
+        if (key == data[2]) {
+            word = data[1];
+        } else {
+            word = data[0];
+        }
+        sweetAlert({
+            title:"あなたのお題は「"+word+"」です",
+            },
+            function () {
+                countDown();
+            }
+        );
     });
 }
+
 
 function myidPost(){
     //自分のIDをポストする
@@ -133,6 +164,8 @@ function allAnswerPost(){
 };
 
 
+<<<<<<< HEAD
+=======
 $(function (){
     $('form > div#streams02').on('click','video',function(){
         if(answerCount == 0){
@@ -156,5 +189,10 @@ $(function (){
 
 });
 
+>>>>>>> 7ebad65402762390431a32019f1fc70fdfd1d1df
 start();
 
+$(window).on("load",function(){
+    //do something
+    //getJson()
+});
