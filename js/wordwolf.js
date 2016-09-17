@@ -4,6 +4,7 @@
 var multiparty;
 var myID;
 var videoCount = 1;
+var answerCount = 0;
 var myCnt = 0;
 var myTim = 0;
 var allUserID =[];
@@ -53,7 +54,7 @@ function start(){
     // for DataChannel
     multiparty.on('message', function(mesg) {
         // peerからテキストメッセージを受信
-        $("p.receive").append(mesg.data + "<br>");
+        $("div.hidden").append('<div>' + mesg.data + "</div>");
     });
 
 
@@ -122,11 +123,14 @@ function convertToTime(time = null) {
 
 $(function (){
     $('form > div#streams02').on('click','video',function(){
-        //少数派（予想）のIDを取得
-        console.log('aaaaa');
-        var forecastID = $(this).attr('id');
-        var data = forecastID;
-        multiparty.send(data);
+        if(answerCount == 0){
+            //少数派（予想）のIDを取得
+            var forecastID = $(this).attr('id');
+            var data = forecastID;
+            multiparty.send(data);
+            $("div.hidden").append('<div id="' + data + '"></div>');
+            answerCount++;
+        }
     });
 
 
