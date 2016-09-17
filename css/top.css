@@ -157,4 +157,10 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	padding: 350px 0 320px;
 	width: 1000px;
 	margin: 0 auto;
+	color: #fff;
+}
+
+.lead{
+	font-size: 18px;
+	font-weight: bold;
 }
