@@ -10,12 +10,14 @@ function videoCount(){
 }
 
 function start(){
+
     //Multiparty インスタンス
     multiparty = new MultiParty({
         "key":"3fe45e9c-4406-41e7-a3db-0b45be57420c",
         "reliable":true,
         "debug":3
     });
+
     //for MediaStream
     multiparty.on('my_ms',function(video){
         //自分のvideoを表示
@@ -39,10 +41,10 @@ function start(){
     //     //peerが切れたら、対象のvideoノードを削除する
     //     $('#'+peer_id).remove();
     // })
+
     multiparty.start();
 
     $('#audio-mute').on('click',function(e){
-        console.log('aaaa');
         var mute = !$(this).data('muted');
         multiparty.mute({audio: mute});
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
@@ -50,9 +52,11 @@ function start(){
 
     countDown();
 
-};
+}
+
 function countDown(){
-    myCnt = 300;
+    // $('#countdown').removeClass()
+    myCnt = 5;
     myTim = setInterval("myTimer()",1000);
 };
 
@@ -62,12 +66,14 @@ function myTimer(){
     if ( myCnt == 0 ){
         clearInterval( myTim );
         sweetAlert("タイムアップ！！", "少数派だと思う方を選択してください");
+
     }
 };
 function convertToTime(time = null) {
     var minute = time / 60;
     var second = time % 60;
-    return Math.floor(minute) + ':' + second;
+    second = ( "00" + second ).substr(-2)
+    return Math.floor(minute) + '分' + second + '秒';
 };
 
 start();
