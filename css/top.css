@@ -151,10 +151,10 @@ q:before, q:after { content: ''; }
 
 abbr, acronym { border: 0; }
 
-body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', ‘游ゴシック体’, ‘Yu Gothic’, ‘YuGothic’ , Meiryo, メイリオ, sans-serif; background: url(img_top/bg_sky.png) left top repeat-x #20b1d8; }
+body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', ‘游ゴシック体’, ‘Yu Gothic’, ‘YuGothic’ , Meiryo, メイリオ, sans-serif; background: url(img_top/bg_sky.gif) left top repeat-x #20b1d8; }
 
 #contents{
-	padding-top: 350px;
+	padding: 350px 0 320px;
 	width: 1000px;
 	margin: 0 auto;
 }
