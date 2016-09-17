@@ -27,7 +27,9 @@ function start(){
     }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
-        $(vNode).appendTo('#streams02');
+        $(vNode)
+            .appendTo('#streams02')
+            .wrap('<div class=video' + videoCount + '" />');
         videoCount++;
         if(videoCount == 4){
             getAllUser();
@@ -46,6 +48,14 @@ function start(){
     //     //peerが切れたら、対象のvideoノードを削除する
     //     $('#'+peer_id).remove();
     // })
+
+    ////////////////////////////////
+    // for DataChannel
+    multiparty.on('message', function(mesg) {
+        // peerからテキストメッセージを受信
+        $("p.receive").append(mesg.data + "<br>");
+    });
+
 
     multiparty.start();
 
@@ -101,7 +111,6 @@ function myTimer(){
             title:"タイムアップ！！",
             text:"少数派だと思う方を選択してください"
         });
-        $('video').wrap('<div />');
     }
 };
 function convertToTime(time = null) {
@@ -112,10 +121,16 @@ function convertToTime(time = null) {
 };
 
 $(function (){
-    $('video').on('click',function(e){
-        
+    $('form > div#streams02 *').on('click',function(){
+        //少数派（予想）のIDを取得
+        var forecastID = $(this).find('video').attr('id');
+        var data = forecastID;
+        multiparty.send(data);
+        console.log(forecastID);
 
     });
+
+
     // $('#audio-mute').on('click',function(e){
     //     var mute = !$(this).data('muted');
     //     multiparty.mute({audio: mute});
