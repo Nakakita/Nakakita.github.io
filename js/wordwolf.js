@@ -6,6 +6,7 @@ var myID;
 var videoCount = 1;
 var myCnt = 0;
 var myTim = 0;
+var allUserID =[];
 
 function start(){
 
@@ -29,7 +30,7 @@ function start(){
         $(vNode).appendTo('#streams02');
         videoCount++;
         if(videoCount == 4){
-            postID();
+            getAllUser();
         }
     }).on('ms_close', function(peer_id){
         //peerが切れたら、対象のvideoノードを削除する
@@ -58,6 +59,13 @@ function start(){
     //
     countDown();
 
+}
+
+function getAllUser(){
+    $('video').each(function(){
+        allUserID.push($(this).attr('id'));
+    });
+    console.log(allUserID);
 }
 
 function getJson(){
