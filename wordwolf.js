@@ -18,7 +18,7 @@ function start(){
         vNode.volume = 0;
         $(vNode).appendTo('#streams');
     }).on('peer_ms', function(video){
-        //pperのvideoを表示
+        //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
         $(vNode).appendTo('#streams');
     }).on('ms_close', function(peer_id){
@@ -26,20 +26,15 @@ function start(){
         $('#'+peer_id).remove();
     })
 
-    $('button').on('click', function(ev){
-        multiparty.send('hello');/* 接続中のピアにメッセージを送信 */
-    });
+    multiparty.start();
 
-
-    $('#audio-mute').on('click', function(ev){
+    $('#audio-mute').on('click', function(e){
+        console.log('aaaa');
         var mute = !$(this).data('muted');
         multiparty.mute({audio: mute});
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
 
-
-
-    multiparty.start();
 }
 
 start();
