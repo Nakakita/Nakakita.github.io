@@ -5,25 +5,30 @@
 <title>skyway - wordwolf</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="https://skyway.io/dist/v2/0.3/peer.js"></script>
-<script type="text/javascript" src="multiparty.js"></script>
-<script type="text/javascript" src="wordwolf.js"></script>
+<script type="text/javascript" src="js/multiparty.js"></script>
+<script type="text/javascript" src="js/wordwolf.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<link rel="stylesheet" href="css/sweetalert.css">
 <style>
 	video{
 		width:300px;
 	}
-	#streams video:first-child{
+	#streams01 video{
 		display:none;
 	}
 </style>
 </head>
 <body>
 	<h1>WordWolf</h1>
+
+	<div>
+	    <h2 id="countdown"></h2>
+	</div>
 	
-	<div id="streams">
-<!-- 		<div>
-			<button id="audio-mute" data-muted="false">audio muted</button>
-		</div>
- -->	</div>
+	<div id="streams01"></div>
+	<div id="streams02"></div>
 
 </body>
 </html>
+
+
