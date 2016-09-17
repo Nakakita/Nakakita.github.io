@@ -2,8 +2,15 @@
 //var peer = new Peer({ key: '3fe45e9c-4406-41e7-a3db-0b45be57420c', debug: 3});
 
 var multiparty;
+var myCnt = 0;
+var myTim = 0;
+
+function videoCount(){
+
+}
 
 function start(){
+
     //Multiparty インスタンス
     multiparty = new MultiParty({
         "key":"3fe45e9c-4406-41e7-a3db-0b45be57420c",
@@ -44,8 +51,29 @@ function start(){
         $(this).text("audio " + (mute ? "unmute" : "mute")).data("muted", mute);
     });
 
+    countDown();
+
 }
 
+function countDown(){
+    myCnt = 60;
+    myTim = setInterval("myTimer()",1000);
+};
 
+function myTimer(){
+    console.log("aaa");
+    myCnt = myCnt - 1;
+    $('#countdown').appendTo("convertToTime()");
+    if ( myCnt == 0 ){
+        clearInterval( myTim );
+        alert( "end" );
+    }
+};
+function convertToTime(time = null) {
+    var minute = time / 60;
+    var second = time % 60;
+    return Math.floor(minute) + ':' + second;
+};
 
 start();
+

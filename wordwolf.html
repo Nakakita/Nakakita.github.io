@@ -11,7 +11,7 @@
 	video{
 		width:300px;
 	}
-	#streams video:first-child{
+	#streams video:first-of-type{
 		display:none;
 	}
 </style>
@@ -20,10 +20,42 @@
 	<h1>WordWolf</h1>
 	
 	<div id="streams">
-<!-- 		<div>
+		<div>
 			<button id="audio-mute" data-muted="false">audio muted</button>
 		</div>
- -->	</div>
+	</div>
 
+	<div>
+	    <h2 id="countdown"></h2>
+	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+myCnt = 0;
+myTim = 0;
+function myGo(){
+	myCnt = 60;
+	myTim = setInterval ( "myTimer()", 1000 );
+}
+function myTimer(){
+	myCnt = myCnt - 1;
+	document.getElementById( "countdown" ).innerHTML = convertToTime(myCnt);
+	if ( myCnt == 0 ){
+	clearInterval( myTim );
+	alert( "end" );
+	}
+}
+function convertToTime(time = null) {
+	var minute = time / 60;
+	var second = time % 60;
+	return Math.floor(minute) + ':' + second;
+}
+
+</script>
+
+
+<div>
+    <h2 id="countdown"></h2>
+    <button onclick="myGo()">START</a>
+</div>
