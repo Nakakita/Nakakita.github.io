@@ -80,9 +80,13 @@
 					display: none;
 				}
 				#streams02{
-					video{
-						width: 340px;
-						height: auto;
+					div{
+						@include clearfix;
+						video{
+							width: 340px;
+							height: auto;
+							float: left;
+						}
 					}
 				}
 			}

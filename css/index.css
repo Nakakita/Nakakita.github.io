@@ -118,42 +118,49 @@
 #wrapper > .inner .videoArea form #streams01 {
   display: none;
 }
-/* line 83, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 video {
+/* line 39, ../scss/import/_mixin.scss */
+#wrapper > .inner .videoArea form #streams02 div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* line 85, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div video {
   width: 340px;
   height: auto;
+  float: left;
 }
-/* line 90, ../scss/index.scss */
+/* line 94, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
   position: absolute;
   left: -252px;
   top: 75px;
 }
-/* line 95, ../scss/index.scss */
+/* line 99, ../scss/index.scss */
 #wrapper > .inner .cloud02 {
   position: absolute;
   left: -150px;
   top: 470px;
 }
-/* line 100, ../scss/index.scss */
+/* line 104, ../scss/index.scss */
 #wrapper > .inner .cloud03 {
   position: absolute;
   right: -230px;
   top: 262px;
 }
-/* line 105, ../scss/index.scss */
+/* line 109, ../scss/index.scss */
 #wrapper > .inner .mountain01 {
   position: absolute;
   left: -214px;
   bottom: 0;
 }
-/* line 110, ../scss/index.scss */
+/* line 114, ../scss/index.scss */
 #wrapper > .inner .mountain02 {
   position: absolute;
   right: -120px;
   bottom: 0;
 }
-/* line 115, ../scss/index.scss */
+/* line 119, ../scss/index.scss */
 #wrapper > .inner .airplane {
   position: absolute;
   right: 330px;
