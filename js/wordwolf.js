@@ -32,7 +32,7 @@ function start(){
         var vNode = MultiParty.util.createVideoNode(video);
         $(vNode)
             .appendTo('#streams02')
-            .wrap('<div class=video' + videoCount + '" />');
+            .wrap('<div class=video' + videoCount + ' />');
         videoCount++;
         if(videoCount == 4){
             getAllUser();
