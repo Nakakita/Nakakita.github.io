@@ -175,47 +175,43 @@
   right: 10px;
   bottom: 10px;
 }
-/* line 133, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 div.vote:hover video {
-  opacity: 0.5;
-}
-/* line 137, ../scss/index.scss */
+/* line 134, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div video {
   width: 336px;
   height: auto;
   display: block;
 }
-/* line 146, ../scss/index.scss */
+/* line 143, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
   position: absolute;
   left: -252px;
   top: 75px;
 }
-/* line 151, ../scss/index.scss */
+/* line 148, ../scss/index.scss */
 #wrapper > .inner .cloud02 {
   position: absolute;
   left: -150px;
   top: 470px;
 }
-/* line 156, ../scss/index.scss */
+/* line 153, ../scss/index.scss */
 #wrapper > .inner .cloud03 {
   position: absolute;
   right: -230px;
   top: 262px;
 }
-/* line 161, ../scss/index.scss */
+/* line 158, ../scss/index.scss */
 #wrapper > .inner .mountain01 {
   position: absolute;
   left: -214px;
   bottom: 0;
 }
-/* line 166, ../scss/index.scss */
+/* line 163, ../scss/index.scss */
 #wrapper > .inner .mountain02 {
   position: absolute;
   right: -120px;
   bottom: 0;
 }
-/* line 171, ../scss/index.scss */
+/* line 168, ../scss/index.scss */
 #wrapper > .inner .airplane {
   position: absolute;
   right: 330px;
