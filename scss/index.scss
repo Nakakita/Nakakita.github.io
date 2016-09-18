@@ -87,7 +87,7 @@
 						position: relative;
 						&.video1{
 							border: 2px solid #f99494;
-							&:hover{
+							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_01.png) 0 0 no-repeat;
 								}
@@ -95,7 +95,7 @@
 						}
 						&.video2{
 							border: 2px solid #94acf9;
-							&:hover{
+							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 								}
@@ -103,13 +103,16 @@
 						}
 						&.video3{
 							border: 2px solid #62e47b;
-							&:hover{
+							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_03.png) 0 0 no-repeat;
 								}
 							}
 						}
-						&:hover{
+						&.vote{
+							cursor: pointer;
+						}
+						&.vote:hover{
 							&:before{
 								content:'';
 								display: block;
@@ -123,6 +126,7 @@
 						video{
 							width: 340px;
 							height: auto;
+							display: block;
 						}
 					}
 				}
