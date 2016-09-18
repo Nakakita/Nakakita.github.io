@@ -158,7 +158,6 @@ function allAnswerPost(){
             if( a > b ) return 1;
             return 0;
         });
-        $.each()
 
         if  (allAnswer.eq(0) >= 2) {
             if (is_wolf) { 
@@ -167,6 +166,7 @@ function allAnswerPost(){
                 return loose;
             }
         } elseif (allAnswer.eq(0) <= 3) {
+            $.each(allAnswer)
             if (is_wolf) {
                 return loose;
             } else {

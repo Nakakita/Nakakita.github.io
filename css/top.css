@@ -155,6 +155,19 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 
 .wrapper{
 	background: url(../img_top/bg_footer.png) bottom center no-repeat;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrapper:before{
+	content: '';
+	display: block;
+	width: 489px;
+	height: 393px;
+	position: absolute;
+	right: -230px;
+	top: 200px;
+	background: url(../img_top/bg_cloud.png) left top no-repeat;
 }
 
 #contents{
@@ -162,7 +175,7 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	width: 1000px;
 	margin: 0 auto;
 	color: #fff;
-	line-height: 1.8;
+	line-height: 1.5;
 	position: relative;
 }
 
@@ -172,9 +185,20 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	width: 452px;
 	height: 359px;
 	position: absolute;
-	left: 300px;
-	top: 50px;
+	left: 390px;
+	top: 60px;
 	background: url(../img_top/img_sun.png) left top no-repeat;
+}
+
+#contents:before{
+	content: '';
+	display: block;
+	width: 489px;
+	height: 393px;
+	position: absolute;
+	left: -150px;
+	top: 450px;
+	background: url(../img_top/bg_cloud.png) left top no-repeat;
 }
 
 .lead{
@@ -210,4 +234,9 @@ ul li:after{
 .btn{
 	margin-top: 30px;
 	text-align: center;
+}
+
+.btn a:hover{
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+	opacity: 0.7;
 }
