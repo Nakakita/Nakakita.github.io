@@ -77,7 +77,7 @@ function getAllUser(){
 function getJson(){
     myID = $('#streams01 video').attr("id");
     //console.log(myID);
-    $.getJSON("/api/word.json", function(data){
+    $.getJSON("https://nakakita.github.io/api/word.json", function(data){
         //var list = getAllUser();
         allUserID.sort(function(a, b){
             if( a < b ) return -1;
