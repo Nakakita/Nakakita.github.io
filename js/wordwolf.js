@@ -77,7 +77,7 @@ function getAllUser(){
 function getJson(){
     myID = $('#streams01 video').attr("id");
     //console.log(myID);
-    $.getJSON("https://219.94.241.84/api/word.php", function(data){
+    $.getJSON("/api/word.json", function(data){
         //var list = getAllUser();
         allUserID.sort(function(a, b){
             if( a < b ) return -1;
@@ -158,21 +158,6 @@ function allAnswerPost(){
             if( a > b ) return 1;
             return 0;
         });
-
-        if  (allAnswer.eq(0) >= 2) {
-            if (is_wolf) { 
-                return win
-            } else {
-                return loose;
-            }
-        } elseif (allAnswer.eq(0) <= 3) {
-            $.each(allAnswer)
-            if (is_wolf) {
-                return loose;
-            } else {
-                return win;
-            }
-        }
     }
 };
 
