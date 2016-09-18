@@ -89,7 +89,6 @@
 						position: relative;
 						&.video1{
 							&.vote:hover{
-								background: #f99494;
 								&:before{
 									background: url(../img/ico_vote_01.png) 0 0 no-repeat;
 								}
@@ -100,7 +99,6 @@
 						}
 						&.video2{
 							&.vote:hover{
-								background: #94acf9;
 								&:before{
 									background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 								}
@@ -111,7 +109,6 @@
 						}
 						&.video3{
 							&.vote:hover{
-								background: #62e47b;
 								&:before{
 									background: url(../img/ico_vote_03.png) 0 0 no-repeat;
 								}
