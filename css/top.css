@@ -171,7 +171,7 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 }
 
 #contents{
-	padding: 320px 0;
+	padding: 250px 0;
 	width: 1000px;
 	margin: 0 auto;
 	color: #fff;
@@ -186,7 +186,7 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	height: 236px;
 	position: absolute;
 	left: 390px;
-	top: 60px;
+	top: 30px;
 	background: url(../img_top/pic_sun.png) left top no-repeat;
 }
 
