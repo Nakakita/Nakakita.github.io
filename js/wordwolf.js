@@ -57,7 +57,12 @@ function start(){
     // for DataChannel
     multiparty.on('message', function(mesg) {
         // peerからテキストメッセージを受信
-        $("div.hidden02").append('<div id="' + mesg.data + '"></div>');
+        if(mesg.data == "OK"){
+            $("div.hidden01").append('<div></div>');
+            okCounter();
+        }else{
+            $("div.hidden02").append('<div id="' + mesg.data + '"></div>');
+        }
         //全回答のID取得
         allAnswerPost();
     });
@@ -145,6 +150,12 @@ function convertToTime(time = null) {
     var second = time % 60;
     second = ( "00" + second ).substr(-2)
     return '<span class="number">' + Math.floor(minute) + '</span><span class="text">分</span><span class="number">' + second + '</span><span class="text">秒</span>';
+};
+
+function okCounter(){
+    if($('div.hidden01 > div').length == 4){
+        countDown();
+    }
 };
 
 function allAnswerPost(){
