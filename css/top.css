@@ -164,8 +164,8 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	width: 489px;
 	height: 393px;
 	position: absolute;
-	right: -150px;
-	top: 220px;
+	right: -230px;
+	top: 200px;
 	background: url(../img_top/bg_cloud.png) left top no-repeat;
 }
 
@@ -196,7 +196,7 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 	height: 393px;
 	position: absolute;
 	left: -150px;
-	top: 470px;
+	top: 450px;
 	background: url(../img_top/bg_cloud.png) left top no-repeat;
 }
 
