@@ -9,6 +9,7 @@ var myCnt = 0;
 var myTim = 0;
 var allUserID =[];
 var allAnswer = [];
+var is_wolf;
 
 function start(){
 
@@ -84,11 +85,14 @@ function getJson(){
             return 0;
         });
 
+
         var key = $.inArray(myID, allUserID);
         if (key == data[2]) {
             word = data[1];
+            is_wolf = true;
         } else {
             word = data[0];
+            is_wolf = false;
         }
         sweetAlert({
             title:"あなたのお題は「"+word+"」です",
@@ -146,8 +150,29 @@ function convertToTime(time = null) {
 function allAnswerPost(){
     if($('div.hidden02 > div').length == 4){
         $('div.hidden02 > div').each(function(){
-            allAnswer.push($(this).attr('id'));
+            //allAnswer.push($(this).attr('id'));
+            allAnswer[$(this).attr('id')]++;
         });
+        allAnswer.sort(function(a, b){
+            if( a < b ) return -1;
+            if( a > b ) return 1;
+            return 0;
+        });
+        $.each()
+
+        if  (allAnswer.eq(0) >= 2) {
+            if (is_wolf) { 
+                return win
+            } else {
+                return loose;
+            }
+        } elseif (allAnswer.eq(0) <= 3) {
+            if (is_wolf) {
+                return loose;
+            } else {
+                return win;
+            }
+        }
     }
 };
 
