@@ -86,27 +86,33 @@
 						@include box;
 						position: relative;
 						&.video1{
-							border: 2px solid #f99494;
 							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_01.png) 0 0 no-repeat;
 								}
 							}
+							video{
+								border: 2px solid #f99494;
+							}
 						}
 						&.video2{
-							border: 2px solid #94acf9;
 							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 								}
 							}
+							img{
+								border: 2px solid #94acf9;
+							}
 						}
 						&.video3{
-							border: 2px solid #62e47b;
 							&.vote:hover{
 								&:before{
 									background: url(../img/ico_vote_03.png) 0 0 no-repeat;
 								}
+							}
+							video{
+								border: 2px solid #62e47b;
 							}
 						}
 						&.vote{

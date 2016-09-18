@@ -132,35 +132,35 @@
   box-sizing: border-box;
   position: relative;
 }
-/* line 88, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 div.video1 {
-  border: 2px solid #f99494;
-}
-/* line 91, ../scss/index.scss */
+/* line 90, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video1.vote:hover:before {
   background: url(../img/ico_vote_01.png) 0 0 no-repeat;
 }
-/* line 96, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 div.video2 {
-  border: 2px solid #94acf9;
+/* line 94, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div.video1 video {
+  border: 2px solid #f99494;
 }
-/* line 99, ../scss/index.scss */
+/* line 100, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video2.vote:hover:before {
   background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 }
 /* line 104, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 div.video3 {
-  border: 2px solid #62e47b;
+#wrapper > .inner .videoArea form #streams02 div.video2 img {
+  border: 2px solid #94acf9;
 }
-/* line 107, ../scss/index.scss */
+/* line 110, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video3.vote:hover:before {
   background: url(../img/ico_vote_03.png) 0 0 no-repeat;
 }
-/* line 112, ../scss/index.scss */
+/* line 114, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div.video3 video {
+  border: 2px solid #62e47b;
+}
+/* line 118, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.vote {
   cursor: pointer;
 }
-/* line 116, ../scss/index.scss */
+/* line 122, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.vote:hover:before {
   content: '';
   display: block;
@@ -170,43 +170,43 @@
   right: 5px;
   bottom: 5px;
 }
-/* line 126, ../scss/index.scss */
+/* line 132, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div video {
   width: 340px;
   height: auto;
   display: block;
 }
-/* line 135, ../scss/index.scss */
+/* line 141, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
   position: absolute;
   left: -252px;
   top: 75px;
 }
-/* line 140, ../scss/index.scss */
+/* line 146, ../scss/index.scss */
 #wrapper > .inner .cloud02 {
   position: absolute;
   left: -150px;
   top: 470px;
 }
-/* line 145, ../scss/index.scss */
+/* line 151, ../scss/index.scss */
 #wrapper > .inner .cloud03 {
   position: absolute;
   right: -230px;
   top: 262px;
 }
-/* line 150, ../scss/index.scss */
+/* line 156, ../scss/index.scss */
 #wrapper > .inner .mountain01 {
   position: absolute;
   left: -214px;
   bottom: 0;
 }
-/* line 155, ../scss/index.scss */
+/* line 161, ../scss/index.scss */
 #wrapper > .inner .mountain02 {
   position: absolute;
   right: -120px;
   bottom: 0;
 }
-/* line 160, ../scss/index.scss */
+/* line 166, ../scss/index.scss */
 #wrapper > .inner .airplane {
   position: absolute;
   right: 330px;
