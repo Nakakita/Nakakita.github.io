@@ -172,6 +172,16 @@ function allAnswerPost(){
             if( a > b ) return 1;
             return 0;
         });
+        if (is_wolf) {
+            result = '少数派';
+        } else {
+            result = '多数派';
+        }
+        sweetAlert({
+            title:"結果発表",
+            text:"あなたは「"+result+"」でした。結果が出る予定でした。",
+        });
+
     }
 };
 
