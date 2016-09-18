@@ -145,7 +145,7 @@
   background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 }
 /* line 104, ../scss/index.scss */
-#wrapper > .inner .videoArea form #streams02 div.video2 img {
+#wrapper > .inner .videoArea form #streams02 div.video2 video {
   border: 2px solid #94acf9;
 }
 /* line 110, ../scss/index.scss */
