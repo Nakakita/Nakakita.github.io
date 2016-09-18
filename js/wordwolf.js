@@ -183,7 +183,8 @@ function allAnswerPost(){
         }
         sweetAlert({
             title:"結果発表",
-            text:"あなたは「"+result+"」でした。¥n（全員のお題と勝敗結果が出る予定でした）",
+            text:"あなたは「"+result+"」でした。<br>（全員のお題と勝敗結果が出る予定でした）",
+            html: true,
         });
 
     }
