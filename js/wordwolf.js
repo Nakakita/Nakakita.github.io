@@ -99,6 +99,7 @@ function getJson(){
             word = data[0];
             is_wolf = false;
         }
+        $('h2 span').after(word);
         sweetAlert({
             title:"あなたのお題は「"+word+"」です",
             },
