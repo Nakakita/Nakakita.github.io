@@ -1,0 +1,121 @@
+@charset 'UTF-8';
+/* ----------------------------
+
+	FileName : index.css
+
+---------------------------- */
+
+@import 'compass';
+@import 'import/_mixin.scss';
+@font-face {
+   font-family: Oswald-Bold;
+   src: url('/font/Oswald-Bold.ttf') format("truetype");
+}
+@font-face {
+   font-family: Oswald-Light;
+   src: url('/font/Oswald-Light.ttf') format("truetype");
+}
+@font-face {
+   font-family: Oswald-Regular;
+   src: url('/font/Oswald-Regular.ttf') format("truetype");
+}
+
+
+// index style
+#wrapper{
+	@include background-image(linear-gradient(#315dd8, #20afd8));
+		overflow-x: hidden;
+	>.inner{
+		width: $contents_width;
+		margin: 0 auto;
+		min-height: 900px;
+		padding: 10px 0 0;
+		position: relative;
+		@media #{$small}{
+			overflow: hidden;
+		}
+		.info{
+			// margin: 10px 0 0;
+			width: 580px;
+			margin: 0 auto;
+			@include clearfix;
+			.time{
+				width: 245px;
+				height: 245px;
+				background: url(../img/pic_sun.png) center center no-repeat;
+				float: left;
+				dl{
+					text-align: center;
+					padding-top: 90px;
+					dt{
+						// @include fontsize(15);
+						font-weight: bold;
+					}
+					dd{
+						@include fontsize(32);
+						font-weight: bold;
+						line-height: 1.2;
+					}
+				}
+			}
+			.theme{
+				float: right;
+				width: 320px;
+				margin-top: 82px;
+				h2{
+					@include fontsize(50);
+					font-weight: bold;
+					line-height: 1.2;
+					color: #fff;
+					span{
+						font-size: 60%;
+						display: block;
+					}
+				}
+			}
+		}
+		.videoArea{
+			form{
+				#streams01{
+					display: none;
+				}
+				#streams02{
+					video{
+						width: 340px;
+						height: auto;
+					}
+				}
+			}
+		}
+		.cloud01{
+			position: absolute;
+			left: -252px;
+			top: 75px;
+		}
+		.cloud02{
+			position: absolute;
+			left: -150px;
+			top: 470px;
+		}
+		.cloud03{
+			position: absolute;
+			right: -230px;
+			top: 262px;
+		}
+		.mountain01{
+			position: absolute;
+			left: -214px;
+			bottom: 0;
+		}
+		.mountain02{
+			position: absolute;
+			right: -120px;
+			bottom: 0;
+		}
+		.airplane{
+			position: absolute;
+			right: 330px;
+			bottom: 65px;
+		}
+	}
+}

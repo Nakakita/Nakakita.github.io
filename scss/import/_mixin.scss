@@ -1,0 +1,55 @@
+$small: "only screen and (max-width:1020px)";
+
+// $experimental-support-for-svg: true;
+$contents_width : 1020px;
+$main_color:#222;
+$bd_color:#d4d4d4;
+$dot_color:#bbb;
+$text_color:#222;
+$link_color:#222;
+$gray:#f2f2f2;
+
+
+.clearfix{
+ display:inline-block;
+ &{
+	display:block;
+ }
+ &:after{
+	content:"";
+	display: block;
+	clear: both;
+	height: 0;
+ }
+}
+
+.textOver{
+	display: block;
+	text-indent: 200%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin fontsize($fontSize, $baseFontSize:14){
+ font-size: percentage($fontSize / $baseFontSize);
+ 
+}
+
+@mixin clearfix(){
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin textOver{
+	display: block;
+	text-indent: 120%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin box($type: border-box) {
+		@include box-sizing(#{$type});
+}
