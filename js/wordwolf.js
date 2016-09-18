@@ -102,9 +102,6 @@ function getJson(){
         sweetAlert({
             title:"あなたのお題は「"+word+"」です",
             },
-            function () {
-                countDown();
-            }
         );
     });
 }
