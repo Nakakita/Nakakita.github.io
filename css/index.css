@@ -130,103 +130,104 @@
 }
 /* line 85, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div {
+  background: #fff;
   float: left;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 }
-/* line 90, ../scss/index.scss */
+/* line 91, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video1.vote:hover {
   background: #f99494;
 }
-/* line 92, ../scss/index.scss */
+/* line 93, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video1.vote:hover:before {
   background: url(../img/ico_vote_01.png) 0 0 no-repeat;
 }
-/* line 96, ../scss/index.scss */
+/* line 97, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video1 video {
   border: 2px solid #f99494;
 }
-/* line 101, ../scss/index.scss */
+/* line 102, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video2.vote:hover {
   background: #94acf9;
 }
-/* line 103, ../scss/index.scss */
+/* line 104, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video2.vote:hover:before {
   background: url(../img/ico_vote_02.png) 0 0 no-repeat;
 }
-/* line 107, ../scss/index.scss */
+/* line 108, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video2 video {
   border: 2px solid #94acf9;
 }
-/* line 112, ../scss/index.scss */
+/* line 113, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video3.vote:hover {
   background: #62e47b;
 }
-/* line 114, ../scss/index.scss */
+/* line 115, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video3.vote:hover:before {
   background: url(../img/ico_vote_03.png) 0 0 no-repeat;
 }
-/* line 118, ../scss/index.scss */
+/* line 119, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.video3 video {
   border: 2px solid #62e47b;
 }
-/* line 122, ../scss/index.scss */
+/* line 123, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.vote {
   cursor: pointer;
 }
-/* line 126, ../scss/index.scss */
+/* line 127, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.vote:hover:before {
   content: '';
   display: block;
   position: absolute;
   width: 70px;
   height: 70px;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
 }
-/* line 135, ../scss/index.scss */
+/* line 136, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div.vote:hover video {
   opacity: 0.5;
 }
-/* line 139, ../scss/index.scss */
+/* line 140, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div video {
   width: 336px;
   height: auto;
   display: block;
 }
-/* line 148, ../scss/index.scss */
+/* line 149, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
   position: absolute;
   left: -252px;
   top: 75px;
 }
-/* line 153, ../scss/index.scss */
+/* line 154, ../scss/index.scss */
 #wrapper > .inner .cloud02 {
   position: absolute;
   left: -150px;
   top: 470px;
 }
-/* line 158, ../scss/index.scss */
+/* line 159, ../scss/index.scss */
 #wrapper > .inner .cloud03 {
   position: absolute;
   right: -230px;
   top: 262px;
 }
-/* line 163, ../scss/index.scss */
+/* line 164, ../scss/index.scss */
 #wrapper > .inner .mountain01 {
   position: absolute;
   left: -214px;
   bottom: 0;
 }
-/* line 168, ../scss/index.scss */
+/* line 169, ../scss/index.scss */
 #wrapper > .inner .mountain02 {
   position: absolute;
   right: -120px;
   bottom: 0;
 }
-/* line 173, ../scss/index.scss */
+/* line 174, ../scss/index.scss */
 #wrapper > .inner .airplane {
   position: absolute;
   right: 330px;

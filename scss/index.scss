@@ -83,6 +83,7 @@
 				#streams02{
 					@include clearfix;
 					div{
+						background: #fff;
 						float: left;
 						@include box;
 						position: relative;
@@ -129,8 +130,8 @@
 								position: absolute;
 								width: 70px;
 								height: 70px;
-								right: 5px;
-								bottom: 5px;
+								right: 10px;
+								bottom: 10px;
 							}
 							video{
 								opacity: 0.5;
