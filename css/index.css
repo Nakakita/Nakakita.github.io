@@ -119,16 +119,19 @@
   display: none;
 }
 /* line 39, ../scss/import/_mixin.scss */
-#wrapper > .inner .videoArea form #streams02 div:after {
+#wrapper > .inner .videoArea form #streams02:after {
   content: "";
   display: block;
   clear: both;
 }
-/* line 85, ../scss/index.scss */
+/* line 84, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div {
+  float: left;
+}
+/* line 86, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div video {
   width: 340px;
   height: auto;
-  float: left;
 }
 /* line 94, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
