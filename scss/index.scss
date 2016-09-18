@@ -83,6 +83,16 @@
 					@include clearfix;
 					div{
 						float: left;
+						@include box;
+						&.video01{
+							border: 2px solid #f99494;
+						}
+						&.video02{
+							border: 2px solid #94acf9;
+						}
+						&.video03{
+							border: 2px solid #62e47b;
+						}
 						video{
 							width: 340px;
 							height: auto;

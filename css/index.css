@@ -127,43 +127,58 @@
 /* line 84, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div {
   float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 86, ../scss/index.scss */
+/* line 87, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div.video01 {
+  border: 2px solid #f99494;
+}
+/* line 90, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div.video02 {
+  border: 2px solid #94acf9;
+}
+/* line 93, ../scss/index.scss */
+#wrapper > .inner .videoArea form #streams02 div.video03 {
+  border: 2px solid #62e47b;
+}
+/* line 96, ../scss/index.scss */
 #wrapper > .inner .videoArea form #streams02 div video {
   width: 340px;
   height: auto;
 }
-/* line 94, ../scss/index.scss */
+/* line 104, ../scss/index.scss */
 #wrapper > .inner .cloud01 {
   position: absolute;
   left: -252px;
   top: 75px;
 }
-/* line 99, ../scss/index.scss */
+/* line 109, ../scss/index.scss */
 #wrapper > .inner .cloud02 {
   position: absolute;
   left: -150px;
   top: 470px;
 }
-/* line 104, ../scss/index.scss */
+/* line 114, ../scss/index.scss */
 #wrapper > .inner .cloud03 {
   position: absolute;
   right: -230px;
   top: 262px;
 }
-/* line 109, ../scss/index.scss */
+/* line 119, ../scss/index.scss */
 #wrapper > .inner .mountain01 {
   position: absolute;
   left: -214px;
   bottom: 0;
 }
-/* line 114, ../scss/index.scss */
+/* line 124, ../scss/index.scss */
 #wrapper > .inner .mountain02 {
   position: absolute;
   right: -120px;
   bottom: 0;
 }
-/* line 119, ../scss/index.scss */
+/* line 129, ../scss/index.scss */
 #wrapper > .inner .airplane {
   position: absolute;
   right: 330px;
