@@ -134,7 +134,7 @@ function myidPost(){
 
 function countDown(){
     // $('#countdown').removeClass()
-    myCnt = 180;
+    myCnt = 65;
     myTim = setInterval("myTimer()",1000);
 };
 
@@ -180,7 +180,7 @@ function allAnswerPost(){
         }
         sweetAlert({
             title:"結果発表",
-            text:"あなたは「"+result+"」でした。結果が出る予定でした。",
+            text:"あなたは「"+result+"」でした。<br>（全員のお題と勝敗結果が出る予定でした）",
         });
 
     }

@@ -84,14 +84,41 @@
 					div{
 						float: left;
 						@include box;
-						&.video01{
+						position: relative;
+						&.video1{
 							border: 2px solid #f99494;
+							&:hover{
+								&:before{
+									background: url(../img/ico_vote_01.png) 0 0 no-repeat;
+								}
+							}
 						}
-						&.video02{
+						&.video2{
 							border: 2px solid #94acf9;
+							&:hover{
+								&:before{
+									background: url(../img/ico_vote_02.png) 0 0 no-repeat;
+								}
+							}
 						}
-						&.video03{
+						&.video3{
 							border: 2px solid #62e47b;
+							&:hover{
+								&:before{
+									background: url(../img/ico_vote_03.png) 0 0 no-repeat;
+								}
+							}
+						}
+						&:hover{
+							&:before{
+								content:'';
+								display: block;
+								position: absolute;
+								width: 70px;
+								height: 70px;
+								right: 5px;
+								bottom: 5px;
+							}
 						}
 						video{
 							width: 340px;
