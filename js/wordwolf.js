@@ -145,7 +145,10 @@ function myTimer(){
         clearInterval( myTim );
         sweetAlert({
             title:"タイムアップ！！",
-            text:"少数派だと思う方を選択してください"
+            text:"少数派だと思う方を選択してください",
+        },
+        function(){
+            $('#streams02 > div').addClass('vote');
         });
     }
 };
@@ -180,7 +183,7 @@ function allAnswerPost(){
         }
         sweetAlert({
             title:"結果発表",
-            text:"あなたは「"+result+"」でした。<br>（全員のお題と勝敗結果が出る予定でした）",
+            text:"あなたは「"+result+"」でした。¥n（全員のお題と勝敗結果が出る予定でした）",
         });
 
     }
