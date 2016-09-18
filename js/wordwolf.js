@@ -103,6 +103,9 @@ function getJson(){
             title:"あなたのお題は「"+word+"」です",
             },
             function () {
+                var data = "OK";
+                multiparty.send(data);
+                $("div.hidden01").append('<div></div>');
                 okCounter();
             }
         );
