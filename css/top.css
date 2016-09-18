@@ -156,6 +156,7 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 .wrapper{
 	background: url(../img_top/bg_footer.png) bottom center no-repeat;
 	position: relative;
+	overflow: hidden;
 }
 
 .wrapper:before{
