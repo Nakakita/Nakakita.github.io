@@ -8,6 +8,7 @@ var answerCount = 0;
 var myCnt = 0;
 var myTim = 0;
 var allUserID =[];
+var allAnswer = [];
 
 function start(){
 
@@ -24,7 +25,7 @@ function start(){
         var vNode = MultiParty.util.createVideoNode(video);
         vNode.volume = 0;
         $(vNode).appendTo('#streams01');
-        myidPost();
+        //myidPost();
     }).on('peer_ms', function(video){
         //peerのvideoを表示
         var vNode = MultiParty.util.createVideoNode(video);
@@ -34,6 +35,7 @@ function start(){
         videoCount++;
         if(videoCount == 4){
             getAllUser();
+            getJson();
         }
     }).on('ms_close', function(peer_id){
         //peerが切れたら、対象のvideoノードを削除する
@@ -54,16 +56,15 @@ function start(){
     // for DataChannel
     multiparty.on('message', function(mesg) {
         // peerからテキストメッセージを受信
-        $("div.hidden").append('<div>' + mesg.data + "</div>");
+        $("div.hidden02").append('<div id="' + mesg.data + '"></div>');
+        //全回答のID取得
+        allAnswerPost();
     });
 
 
     multiparty.start();
 
-    getJson();
-
-    countDown();
-
+    //countDown();
 }
 
 function getAllUser(){
@@ -73,11 +74,32 @@ function getAllUser(){
 }
 
 function getJson(){
+    myID = $('#streams01 video').attr("id");
+    //console.log(myID);
     $.getJSON("https://219.94.241.84/api/word.php", function(data){
-        console.log(data);
+        //var list = getAllUser();
+        allUserID.sort(function(a, b){
+            if( a < b ) return -1;
+            if( a > b ) return 1;
+            return 0;
+        });
 
+        var key = $.inArray(myID, allUserID);
+        if (key == data[2]) {
+            word = data[1];
+        } else {
+            word = data[0];
+        }
+        sweetAlert({
+            title:"あなたのお題は「"+word+"」です",
+            },
+            function () {
+                countDown();
+            }
+        );
     });
 }
+
 
 function myidPost(){
     //自分のIDをポストする
@@ -99,7 +121,7 @@ function myidPost(){
 
 function countDown(){
     // $('#countdown').removeClass()
-    myCnt = 5;
+    myCnt = 180;
     myTim = setInterval("myTimer()",1000);
 };
 
@@ -118,7 +140,15 @@ function convertToTime(time = null) {
     var minute = time / 60;
     var second = time % 60;
     second = ( "00" + second ).substr(-2)
-    return Math.floor(minute) + '分' + second + '秒';
+    return '<span class="number">' + Math.floor(minute) + '</span><span class="text">分</span><span class="number">' + second + '</span><span class="text">秒</span>';
+};
+
+function allAnswerPost(){
+    if($('div.hidden02 > div').length == 4){
+        $('div.hidden02 > div').each(function(){
+            allAnswer.push($(this).attr('id'));
+        });
+    }
 };
 
 $(function (){
@@ -128,8 +158,10 @@ $(function (){
             var forecastID = $(this).attr('id');
             var data = forecastID;
             multiparty.send(data);
-            $("div.hidden").append('<div id="' + data + '"></div>');
+            $("div.hidden02").append('<div id="' + data + '"></div>');
             answerCount++;
+            //全回答のID取得
+            allAnswerPost();
         }
     });
 
@@ -143,4 +175,3 @@ $(function (){
 });
 
 start();
-
