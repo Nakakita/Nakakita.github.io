@@ -182,23 +182,23 @@ body { font: 14px/1.231 Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ã
 #contents:after{
 	content: '';
 	display: block;
-	width: 452px;
-	height: 359px;
+	width: 236px;
+	height: 236px;
 	position: absolute;
 	left: 390px;
 	top: 60px;
-	background: url(../img_top/img_sun.png) left top no-repeat;
+	background: url(../img_top/pic_sun.png) left top no-repeat;
 }
 
 #contents:before{
 	content: '';
 	display: block;
-	width: 489px;
-	height: 393px;
+	width: 240px;
+	height: 138px;
 	position: absolute;
 	left: -150px;
 	top: 450px;
-	background: url(../img_top/bg_cloud.png) left top no-repeat;
+	background: url(../img_top/pic_cloud.png) left top no-repeat;
 }
 
 .lead{
